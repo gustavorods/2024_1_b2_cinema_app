@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CinemaApp</string>
+    <!-- Nome filmes -->
+    <string name="nomeFilme1">Duna 2</string>
+    <string name="nomeFilme2">la La Land</string>
+    <string name="nomeFilme3">Parasita</string>
+    <string name="nomeFilme4">Batman</string>
+
+    <!--    Descrição filmes-->
+    <string name="desc1">"Obra de arte"</string>
+    <string name="desc2">"Nada igual!"</string>
+    <string name="desc3">Escolha da crítica</string>
+    <string name="desc4">"Revolucionário"</string>
+</resources>
