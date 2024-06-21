@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    cardGrid()
+                    App()
                 }
             }
         }
@@ -105,9 +105,9 @@ fun header(modifier: Modifier = Modifier) {
 @Composable
 fun card(estrutura: estrutura, modifier: Modifier = Modifier) {
     Column(modifier = Modifier
-            .background(Color(0xFF191919), RoundedCornerShape(15.dp))
-            .width(130.dp)
-            .height(210.dp),
+        .background(Color(0xFF191919), RoundedCornerShape(15.dp))
+        .width(130.dp)
+        .height(210.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         )
@@ -123,11 +123,13 @@ fun card(estrutura: estrutura, modifier: Modifier = Modifier) {
             Box(modifier = Modifier
                 .background(Color(0xFFDCB349), RoundedCornerShape(7.dp))
                 .padding(2.dp)
-                .width(110.dp),
+                .width(120.dp),
                 contentAlignment = Alignment.Center
             )
             {
-                Text(text = stringResource(id = estrutura.descricao))
+                Text(text = stringResource(id = estrutura.descricao),
+                    textAlign = TextAlign.Center
+                )
             }
         }
 }
@@ -147,16 +149,89 @@ fun cardGrid(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun footer(modifier: Modifier = Modifier) {
+    Box()
+    {
+        Row(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(60.dp)
+                .align(Alignment.BottomCenter)
+                .background(Color(0xFF212121)),
+            horizontalArrangement = Arrangement.SpaceAround,
+            verticalAlignment = Alignment.CenterVertically  // Centralize verticalmente os itens na Row
+        )
+        {
+            Column(
+                modifier = Modifier,
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                Image(painter = painterResource(R.drawable.icone_filmes), contentDescription = "Icone de pipoca")
+                Text(text = "Filmes",
+                    style = TextStyle(color = Color.White, fontSize = 15.sp)
+                )
+            }
+            Column(
+                modifier = Modifier,
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                Image(painter = painterResource(R.drawable.icone_ingressos), contentDescription = "Icone de ingresso")
+                Text(text = "Ingresso",
+                    style = TextStyle(color = Color.White, fontSize = 15.sp))
+            }
+            Column(
+                modifier = Modifier,
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                Image(painter = painterResource(R.drawable.icone_jornal), contentDescription = "Icone de jornal")
+                Text(text = "Jornal",
+                    style = TextStyle(color = Color.White, fontSize = 15.sp))
+            }
+            Column(
+                modifier = Modifier,
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                Image(painter = painterResource(R.drawable.icone_configura__es), contentDescription = "Icone de engrenagem")
+                Text(text = "Configurações",
+                    style = TextStyle(color = Color.White, fontSize = 15.sp))
+            }
+        }
+    }
+}
+
+@Composable
+fun App() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Column() {
+            header()
+            Box(modifier = Modifier.weight(1f)) {
+                Column {
+                    cardGrid()
+                }
+            }
+            footer()
+        }
+    }
+}
 
 @Preview
 @Composable
 fun previa() {
     Surface(
-        modifier = Modifier.fillMaxSize()
-        .statusBarsPadding(),
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding(),
         color = Color(0xff323232)
     ) {
-//        card(estrutura = estrutura(R.string.nomeFilme1, R.string.desc1, R.drawable.dunaposter))
-        cardGrid()
+        App()
     }
 }

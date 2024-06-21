@@ -5,10 +5,19 @@
     <string name="nomeFilme2">la La Land</string>
     <string name="nomeFilme3">Parasita</string>
     <string name="nomeFilme4">Batman</string>
+    <string name="nomeFilme5">Oppenheimer</string>
+    <string name="nomeFilme6">The Social Network</string>
+    <string name="nomeFilme7">Ratatouille</string>
+    <string name="nomeFilme8">Evidências do amor</string>
 
     <!--    Descrição filmes-->
     <string name="desc1">"Obra de arte"</string>
     <string name="desc2">"Nada igual!"</string>
     <string name="desc3">Escolha da crítica</string>
     <string name="desc4">"Revolucionário"</string>
+    <string name="desc5">Oscar 2024</string>
+    <string name="desc6">Programador</string>
+    <string name="desc7">Gastronomia</string>
+    <string name="desc8">Nacional</string>
+
 </resources>
